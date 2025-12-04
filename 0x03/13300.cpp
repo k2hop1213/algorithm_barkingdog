@@ -18,10 +18,10 @@ int main() {
 		int temp1;
 		cin >> temp >> temp1;
 		if (temp) {
-			a[temp1]++;//¿©ÀÚÇĞ³â
+			a[temp1]++;//Â¿Â©Ã€ÃšÃ‡ÃÂ³Ã¢
 		}
 		else {
-			b[temp1]++;//³²ÀÚÇĞ³â
+			b[temp1]++;//Â³Â²Ã€ÃšÃ‡ÃÂ³Ã¢
 		}
 	}
 	int res = 0;
