@@ -1,12 +1,12 @@
 #include <stdc++.h>
 using namespace std;
 #define X first
-#define Y second // pair¿¡¼­ first, second¸¦ ÁÙ¿©¼­ ¾²±â À§ÇØ¼­ »ç¿ë
-int board[102][102]; // 1ÀÌ ÆÄ¶õ Ä­, 0ÀÌ »¡°£ Ä­¿¡ ´ëÀÀ
-int vis[102][102]; // ÇØ´ç Ä­À» ¹æ¹®Çß´ÂÁö ¿©ºÎ¸¦ ÀúÀå
+#define Y second // pairì—ì„œ first, secondë¥¼ ì¤„ì—¬ì„œ ì“°ê¸° ìœ„í•´ì„œ ì‚¬ìš©
+int board[102][102]; // 1ì´ íŒŒë€ ì¹¸, 0ì´ ë¹¨ê°„ ì¹¸ì— ëŒ€ì‘
+int vis[102][102]; // í•´ë‹¹ ì¹¸ì„ ë°©ë¬¸í–ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì €ì¥
 
 int dx[4] = { 1,0,-1,0 };
-int dy[4] = { 0,1,0,-1 }; // »óÇÏÁÂ¿ì ³× ¹æÇâÀ» ÀÇ¹Ì
+int dy[4] = { 0,1,0,-1 }; // ìƒí•˜ì¢Œìš° ë„¤ ë°©í–¥ì„ ì˜ë¯¸
 int main(void) {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
@@ -36,12 +36,12 @@ int main(void) {
 				temp++;
 				while (!Q.empty()) {
 					pair<int, int> cur = Q.front(); Q.pop();
-					for (int dir = 0; dir < 4; dir++) { // »óÇÏÁÂ¿ì Ä­À» »ìÆìº¼ °ÍÀÌ´Ù.
+					for (int dir = 0; dir < 4; dir++) { // ìƒí•˜ì¢Œìš° ì¹¸ì„ ì‚´í´ë³¼ ê²ƒì´ë‹¤.
 						int nx = cur.X + dx[dir];
-						int ny = cur.Y + dy[dir]; // nx, ny¿¡ dir¿¡¼­ Á¤ÇÑ ¹æÇâÀÇ ÀÎÁ¢ÇÑ Ä­ÀÇ ÁÂÇ¥°¡ µé¾î°¨
-						if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue; // ¹üÀ§ ¹ÛÀÏ °æ¿ì ³Ñ¾î°¨
-						if (vis[nx][ny] || board[nx][ny] != 1) continue; // ÀÌ¹Ì ¹æ¹®ÇÑ Ä­ÀÌ°Å³ª ÆÄ¶õ Ä­ÀÌ ¾Æ´Ò °æ¿ì
-						vis[nx][ny] = 1; // (nx, ny)¸¦ ¹æ¹®Çß´Ù°í ¸í½Ã
+						int ny = cur.Y + dy[dir]; // nx, nyì— dirì—ì„œ ì •í•œ ë°©í–¥ì˜ ì¸ì ‘í•œ ì¹¸ì˜ ì¢Œí‘œê°€ ë“¤ì–´ê°
+						if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue; // ë²”ìœ„ ë°–ì¼ ê²½ìš° ë„˜ì–´ê°
+						if (vis[nx][ny] || board[nx][ny] != 1) continue; // ì´ë¯¸ ë°©ë¬¸í•œ ì¹¸ì´ê±°ë‚˜ íŒŒë€ ì¹¸ì´ ì•„ë‹ ê²½ìš°
+						vis[nx][ny] = 1; // (nx, ny)ë¥¼ ë°©ë¬¸í–ˆë‹¤ê³  ëª…ì‹œ
 						Q.push({ nx,ny });
 						temp++;
 					}
